@@ -1,4 +1,5 @@
 let  CurrentTime = () => {
-    return <h1>This is the current time :   </h1>
+    let time = new Date();
+    return <p className="lead">This is the current time :  {time.toLocaleDateString()} - { time.toLocaleTimeString()} </p>
 }
 export default CurrentTime;
