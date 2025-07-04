@@ -7,7 +7,7 @@ function App() {
   // let foodItem = [];
   return (
     <>
-      <h1 className="fw-bold">Healthy Food</h1>
+      <h1 className="fw-bold food-heading">Healthy Food</h1>
       <ErrorMessage item={foodItem}/>
       <FoodItems item={foodItem}/>
     </>
