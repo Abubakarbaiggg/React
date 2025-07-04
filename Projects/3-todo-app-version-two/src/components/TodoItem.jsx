@@ -1,8 +1,6 @@
-function TodoItem2() {
-    let todoName = 'Go To College';
-    let todoDate = '4/12/2002';
+function TodoItem({todoName,todoDate}) {
     return (
-        <div className="container ">
+        <div className="container">
             <div className="row kg-row">
                 <div className="col-6">
                     {todoName}
@@ -17,4 +15,4 @@ function TodoItem2() {
         </div>
     )
 }
-export default TodoItem2;
+export default TodoItem;
