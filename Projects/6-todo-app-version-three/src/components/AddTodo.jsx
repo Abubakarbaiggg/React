@@ -1,23 +1,17 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { BiMessageAdd } from "react-icons/bi";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [dueDate, setDueDate] = useState("");
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
-  const handleNameChange = (e) => {
-    setTodoName(e.target.value);
-  };
-  const handleDateChange = (e) => {
-    setDueDate(e.target.value);
-  };
   const handleAddButtonClicked = (e) => {
-    console.log(e);
     e.preventDefault();
-    
+    const todoName = todoNameElement.current.value;
+    const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
     onNewItem(todoName, dueDate);
-    setTodoName("");
-    setDueDate("");
   };
 
   return (
@@ -26,13 +20,12 @@ function AddTodo({ onNewItem }) {
         <div className="col-6">
           <input
             type="text"
-            value={todoName}
+            ref={todoNameElement}
             placeholder="Enter Todo Here"
-            onChange={handleNameChange}
           />
         </div>
         <div className="col-4">
-          <input type="date" value={dueDate} onChange={handleDateChange} />
+          <input type="date" ref={dueDateElement}  />
         </div>
         <div className="col-2">
           <button className="btn btn-success kg-button">
