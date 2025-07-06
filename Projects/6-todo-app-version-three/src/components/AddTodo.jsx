@@ -11,15 +11,18 @@ function AddTodo({ onNewItem }) {
   const handleDateChange = (e) => {
     setDueDate(e.target.value);
   };
-  const handleAddButtonClicked = () => {
-    onNewItem(todoName,dueDate)
+  const handleAddButtonClicked = (e) => {
+    console.log(e);
+    e.preventDefault();
+    
+    onNewItem(todoName, dueDate);
     setTodoName("");
     setDueDate("");
   };
 
   return (
     <div className="container text-center">
-      <div className="row kg-row">
+      <form className="row kg-row" onSubmit={handleAddButtonClicked}>
         <div className="col-6">
           <input
             type="text"
@@ -32,15 +35,11 @@ function AddTodo({ onNewItem }) {
           <input type="date" value={dueDate} onChange={handleDateChange} />
         </div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-success kg-button"
-            onClick={handleAddButtonClicked}
-          >
-           <BiMessageAdd />
+          <button className="btn btn-success kg-button">
+            <BiMessageAdd />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
