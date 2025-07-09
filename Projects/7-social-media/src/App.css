@@ -6,6 +6,7 @@
 }
 .sidebar{
     min-height: 750px;
+    width: 80px;
 }
 .post-card{
     margin: 20px 50px;  
