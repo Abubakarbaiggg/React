@@ -62,10 +62,7 @@ const PostListProvider = ({ children }) => {
     return (
         <PostList.Provider
             value={{
-                postList,
-                addInitialPosts,
-                addPost,
-                deletePost,
+                postList, addInitialPosts, addPost, deletePost,
             }}
         >
             {children}
