@@ -59,6 +59,7 @@ const PostListProvider = ({ children }) => {
         });
     },[dispatchPostList]);
 
+    
     const arr = [5,2,5,2,1];
     const stordArr = useMemo(()=> arr.sort(),[arr]);
 
