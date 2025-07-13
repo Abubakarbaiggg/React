@@ -84,6 +84,7 @@ export async function createPostAction(data){
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData)
   })
+  
     .then((res) => res.json())
     .then((post) => {
       console.log("Got response from server", post);
